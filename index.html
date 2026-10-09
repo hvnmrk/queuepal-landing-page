@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#137653" />
+
+    <title>QueuePal — Less Waiting. More Playing.</title>
+    <meta
+      name="description"
+      content="QueuePal is a sports club and session management app. Manage clubs, courts, matchmaking and live game queues in one place."
+    />
+
+    <meta
+      property="og:title"
+      content="QueuePal — Less Waiting. More Playing."
+    />
+    <meta
+      property="og:description"
+      content="Organize your games, manage courts and keep the queue moving with QueuePal."
+    />
+    <meta property="og:type" content="website" />
+
+    <link rel="icon" href="assets/queuepal-logo.png" />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Google Analytics: replace the ID in both places -->
+    <!-- Add your analytics consent mechanism before enabling if required. -->
+    <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
+
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#home" class="brand" aria-label="QueuePal home">
+          <span class="brand-icon">
+            <img
+              src="assets/queuepal-logo.png"
+              alt=""
+              onerror="this.style.display = 'none'"
+            />
+          </span>
+          <span>Queue<span class="green-text">Pal</span></span>
+        </a>
+
+        <div class="nav-links" id="navLinks">
+          <a href="#features">Features</a>
+          <a href="#how">How it Works</a>
+          <a href="#preview">App Preview</a>
+          <a href="#faq">FAQ</a>
+          <a href="#download" class="nav-cta"> Get the App <span>↗</span> </a>
+        </div>
+
+        <button
+          class="menu-button"
+          id="menuButton"
+          type="button"
+          aria-controls="navLinks"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero" id="home">
+        <div class="hero-glow"></div>
+
+        <div class="container hero-layout">
+          <div class="hero-copy reveal">
+            <div class="eyebrow">
+              <span class="online-dot"></span>
+              MADE FOR BETTER GAME SESSIONS
+            </div>
+
+            <h1>
+              Less waiting.<br />
+              <span>More playing.</span>
+            </h1>
+
+            <p class="hero-description">
+              From organizing clubs to managing live match queues, QueuePal
+              makes every game session simpler, smoother, and more enjoyable.
+            </p>
+
+            <div class="hero-buttons">
+              <a href="#download" class="button button-primary">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
+                  <path d="M12 3v12m-5-5 5 5 5-5M4 17v3h16v-3" />
+                </svg>
+                Download for Android
+              </a>
+
+              <a href="#features" class="button button-outline">
+                Explore Features <span>↗</span>
+              </a>
+            </div>
+
+            <div class="hero-footnote">
+              <span>✓ Free to download</span>
+              <span class="footnote-dot"></span>
+              <span>✓ Android app</span>
+            </div>
+          </div>
+
+          <div class="hero-art reveal">
+            <div class="art-circle"></div>
+            <div class="art-ring"></div>
+
+            <div class="phone-shell">
+              <div class="phone-camera"></div>
+              <div class="phone-content">
+                <img
+                  src="assets/dashboard.png"
+                  alt="QueuePal app dashboard"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.hidden = false;
+                  "
+                />
+                <div class="mockup-fallback" hidden>
+                  <div class="mockup-logo">QP</div>
+                  <h3>QueuePal</h3>
+                  <p>Your game starts here.</p>
+                  <div class="mockup-box">My Clubs</div>
+                  <div class="mockup-box">Game Sessions</div>
+                  <div class="mockup-box">Live Queue</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="float-card float-one">
+              <span class="float-icon">✓</span>
+              <div>
+                <strong>Smart Matchmaking</strong>
+                <small>Keep the game moving</small>
+              </div>
+            </div>
+
+            <div class="float-card float-two">
+              <span class="float-icon">↗</span>
+              <div>
+                <strong>Live Match Queue</strong>
+                <small>Stay in the loop</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PUBLIC DOWNLOAD STATS -->
+      <section class="stats-section">
+        <div class="container">
+          <div class="stats-bar reveal">
+            <div class="stat-item">
+              <span class="stat-symbol">↓</span>
+              <strong id="downloadCount">—</strong>
+              <span class="stat-label">APK Downloads</span>
+              <small id="downloadCountStatus">Checking releases...</small>
+            </div>
+
+            <div class="stat-divider"></div>
+
+            <div class="stat-item">
+              <span class="stat-symbol">∞</span>
+              <strong>Free</strong>
+              <span class="stat-label">To Download</span>
+              <small>No purchase required</small>
+            </div>
+
+            <div class="stat-divider"></div>
+
+            <div class="stat-item">
+              <span class="stat-symbol">✓</span>
+              <strong>3</strong>
+              <span class="stat-label">Matchmaking Modes</span>
+              <small>Play your way</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTRO -->
+      <section class="section intro-section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="section-eyebrow">THE QUEUEPAL EXPERIENCE</span>
+            <h2>
+              Game time should be about<br />
+              <span>playing, not waiting.</span>
+            </h2>
+            <p>
+              Spend less time deciding who's next and more time doing what you
+              enjoy. QueuePal brings the essentials of game management together.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section class="section features-section" id="features">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="section-eyebrow">BUILT FOR YOUR COMMUNITY</span>
+            <h2>All the tools.<br /><span>None of the hassle.</span></h2>
+            <p>Everything you need to keep your sessions organized.</p>
+          </div>
+
+          <div class="features-grid">
+            <article class="feature-card feature-highlight reveal">
+              <div class="feature-icon">♧</div>
+              <h3>Club Management</h3>
+              <p>
+                Create clubs, join your community, and keep player memberships
+                organized in one place.
+              </p>
+              <span class="card-label">BETTER TOGETHER ↗</span>
+            </article>
+
+            <article class="feature-card reveal">
+              <div class="feature-icon">▦</div>
+              <h3>Session Management</h3>
+              <p>
+                Set up sessions, add participating players, and manage your
+                games from start to finish.
+              </p>
+            </article>
+
+            <article class="feature-card reveal">
+              <div class="feature-icon">⌗</div>
+              <h3>Court Management</h3>
+              <p>
+                Organize multiple courts, monitor ongoing games, and see where
+                everyone is playing.
+              </p>
+            </article>
+
+            <article class="feature-card reveal">
+              <div class="feature-icon">⇄</div>
+              <h3>Smart Matchmaking</h3>
+              <p>
+                Flexible matchmaking modes help organizers create matches suited
+                to their sessions.
+              </p>
+            </article>
+
+            <article class="feature-card reveal">
+              <div class="feature-icon">☷</div>
+              <h3>Live Player Queue</h3>
+              <p>
+                Keep track of waiting players and upcoming matches so everyone
+                knows who's next.
+              </p>
+            </article>
+
+            <article class="feature-card reveal">
+              <div class="feature-icon">◉</div>
+              <h3>Live Spectator View</h3>
+              <p>
+                Share session information so participants can follow updates
+                through their browser.
+              </p>
+            </article>
+
+            <article class="feature-card reveal">
+              <div class="feature-icon">▤</div>
+              <h3>Match History</h3>
+              <p>
+                Review previous sessions and results whenever you need to look
+                back.
+              </p>
+            </article>
+
+            <article class="feature-card reveal">
+              <div class="feature-icon">▥</div>
+              <h3>Player Standings</h3>
+              <p>
+                Follow results and player performance throughout your game
+                sessions.
+              </p>
+            </article>
+
+            <article class="feature-card reveal">
+              <div class="feature-icon">♧</div>
+              <h3>Made for Club Organizers</h3>
+              <p>
+                Spend less time coordinating players and more time enjoying the
+                game.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section class="section how-section" id="how">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="section-eyebrow">EASY TO GET STARTED</span>
+            <h2>Three steps.<br /><span>One great session.</span></h2>
+            <p>A simpler way to organize the games you love.</p>
+          </div>
+
+          <div class="steps-grid">
+            <article class="step-card reveal">
+              <div class="step-number">01</div>
+              <h3>Create or Join a Club</h3>
+              <p>
+                Bring your community together and keep your club members in one
+                place.
+              </p>
+            </article>
+
+            <article class="step-card reveal">
+              <div class="step-number">02</div>
+              <h3>Organize a Session</h3>
+              <p>
+                Set up courts, add players, and choose how matches will be
+                organized.
+              </p>
+            </article>
+
+            <article class="step-card reveal">
+              <div class="step-number">03</div>
+              <h3>Play & Track</h3>
+              <p>
+                Keep the queue moving, monitor games, and track results as you
+                play.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- PREVIEW -->
+      <section class="section preview-section" id="preview">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="section-eyebrow">TAKE A CLOSER LOOK</span>
+            <h2>Designed for the<br /><span>way you play.</span></h2>
+            <p>A simple, organized experience right from your phone.</p>
+          </div>
+
+          <div class="screenshots">
+            <figure class="screenshot-card reveal">
+              <div class="screenshot-frame">
+                <img
+                  src="assets/dashboard.png"
+                  alt="QueuePal dashboard"
+                  loading="lazy"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.hidden = false;
+                  "
+                />
+                <div class="screenshot-fallback" hidden>Add dashboard.png</div>
+              </div>
+              <figcaption>Dashboard</figcaption>
+            </figure>
+
+            <figure class="screenshot-card reveal">
+              <div class="screenshot-frame">
+                <img
+                  src="assets/sessions.png"
+                  alt="QueuePal sessions"
+                  loading="lazy"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.hidden = false;
+                  "
+                />
+                <div class="screenshot-fallback" hidden>Add sessions.png</div>
+              </div>
+              <figcaption>Game Sessions</figcaption>
+            </figure>
+
+            <figure class="screenshot-card reveal">
+              <div class="screenshot-frame">
+                <img
+                  src="assets/courts.png"
+                  alt="QueuePal court management"
+                  loading="lazy"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.hidden = false;
+                  "
+                />
+                <div class="screenshot-fallback" hidden>Add courts.png</div>
+              </div>
+              <figcaption>Court Management</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- DOWNLOAD SECTION -->
+      <section class="section download-section" id="download">
+        <div class="container">
+          <div class="download-panel reveal">
+            <div class="panel-circle circle-one"></div>
+            <div class="panel-circle circle-two"></div>
+
+            <div class="download-info">
+              <span class="download-eyebrow">READY FOR YOUR NEXT GAME?</span>
+              <h2>Get in the game.<br /><span>Get QueuePal.</span></h2>
+              <p>
+                Make every session easier to manage. Download QueuePal for
+                Android and get started.
+              </p>
+
+              <a
+                href="#download"
+                id="apkDownloadButton"
+                class="button button-white"
+                aria-disabled="true"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
+                  <path d="M12 3v12m-5-5 5 5 5-5M4 17v3h16v-3" />
+                </svg>
+                <span id="downloadButtonText">Checking APK...</span>
+              </a>
+
+              <p class="apk-info" id="apkInfo">
+                Waiting for a public GitHub Release.
+              </p>
+            </div>
+
+            <div class="download-art" aria-hidden="true">
+              <div class="big-logo">
+                <img
+                  src="assets/queuepal-logo.png"
+                  alt=""
+                  onerror="this.style.display = 'none'"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section faq-section" id="faq">
+        <div class="container faq-container">
+          <div class="section-heading reveal">
+            <span class="section-eyebrow">QUESTIONS & ANSWERS</span>
+            <h2>Frequently asked <span>questions.</span></h2>
+          </div>
+
+          <div class="faq-items reveal">
+            <details>
+              <summary>Is QueuePal free to use?</summary>
+              <p>
+                Yes. QueuePal is currently offered as a free download for
+                Android.
+              </p>
+            </details>
+
+            <details>
+              <summary>Where can I download QueuePal?</summary>
+              <p>
+                Use the download button on this website. It links to an official
+                APK published in the QueuePal landing page's GitHub Releases.
+              </p>
+            </details>
+
+            <details>
+              <summary>Is QueuePal on the Google Play Store?</summary>
+              <p>
+                Not yet. QueuePal is currently distributed through a direct
+                Android APK download.
+              </p>
+            </details>
+
+            <details>
+              <summary>How do I install the APK?</summary>
+              <p>
+                Download the APK on an Android device, open the downloaded file,
+                and follow the installation instructions. Your device may ask
+                you to allow installations from that source.
+              </p>
+            </details>
+
+            <details>
+              <summary>Can I use QueuePal for multiple courts?</summary>
+              <p>
+                Yes. QueuePal includes court management functionality for
+                organizing sessions with multiple courts.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-main">
+          <div class="footer-about">
+            <a href="#home" class="brand">
+              <span class="brand-icon">
+                <img
+                  src="assets/queuepal-logo.png"
+                  alt=""
+                  onerror="this.style.display = 'none'"
+                />
+              </span>
+              <span>Queue<span class="green-text">Pal</span></span>
+            </a>
+            <p>Less waiting. More playing.</p>
+          </div>
+
+          <div class="footer-navigation">
+            <a href="#features">Features</a>
+            <a href="#how">How it Works</a>
+            <a href="#preview">Preview</a>
+            <a href="#download">Download</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>© <span id="year"></span> QueuePal. All rights reserved.</span>
+          <span
+            >Created by
+            <a
+              href="https://github.com/hvnmrk"
+              target="_blank"
+              rel="noopener noreferrer"
+              >hvnmrk ↗</a
+            >
+          </span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
